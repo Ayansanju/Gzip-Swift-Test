@@ -29,7 +29,13 @@
 import struct Foundation.Data
 
 #if os(Linux)
-    import zlibLinux
+    #if canImport(zlibLinux)
+        import zlibLinux
+    #elseif canImport(zlibHomebrew)
+        import zlibHomebrew
+    #else
+        import zlib
+    #endif
 #else
     import zlib
 #endif
