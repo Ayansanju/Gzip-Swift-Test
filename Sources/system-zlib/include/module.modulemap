@@ -4,3 +4,10 @@ module zlibLinux [system] {
     link "z"
     export *
 }
+
+module zlibHomebrew [system] {
+    header "/home/linuxbrew/.linuxbrew/include/zlib.h"
+    header "/home/linuxbrew/.linuxbrew/include/zconf.h"
+    link "z"
+    export *
+}
